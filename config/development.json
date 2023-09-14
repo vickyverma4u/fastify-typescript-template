@@ -1,0 +1,6 @@
+{
+  "jwt": {
+    "secret": "ea3eb1624c7f6a9580444f3613fd24f44478f47d7573caac17b4286320cb2c8d",
+    "expiresIn": 172800000
+  }
+}
