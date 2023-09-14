@@ -17,7 +17,7 @@ export interface TokenPayload {
   role: string;
 }
 
-export const signToken = async (tokenPayload: TokenPayload) => {
+export const signToken = (tokenPayload: TokenPayload) => {
   return signSync(tokenPayload);
 };
 

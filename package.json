@@ -23,6 +23,7 @@
     "@fastify/swagger": "^8.10.0",
     "@fastify/swagger-ui": "^1.9.3",
     "@fastify/type-provider-typebox": "^3.5.0",
+    "argon2": "^0.31.1",
     "config": "^3.3.9",
     "dotenv": "^16.3.1",
     "fast-jwt": "^3.2.0",
