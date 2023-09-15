@@ -1,4 +1,4 @@
-import { FastifyRequestTypebox, FastifyReplyTypebox, RouteShorthandOptionsWithHandlerTypebox } from '../../types';
+import { RouteShorthandOptionsWithHandlerTypebox } from '../../types';
 import { Type } from '@fastify/type-provider-typebox';
 import { createUser } from '../../services/fileDb';
 import { signToken } from '../../utils/jwt';
@@ -20,10 +20,7 @@ const registerSchema = {
 
 export const register: RouteShorthandOptionsWithHandlerTypebox<typeof registerSchema> = {
   schema: registerSchema,
-  handler: async (
-    req: FastifyRequestTypebox<typeof registerSchema>,
-    reply: FastifyReplyTypebox<typeof registerSchema>,
-  ) => {
+  handler: async (req, reply) => {
     try {
       const user = await createUser(req.body.email, req.body.password);
       const token = signToken({ userId: user.userId, email: user.email, role: user.role });

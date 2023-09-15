@@ -1,23 +1,15 @@
-# Getting Started with [Fastify-CLI](https://www.npmjs.com/package/fastify-cli)
-This project was bootstrapped with Fastify-CLI.
+# Fastify Typescript REST API Starter Project
 
-## Available Scripts
+## USP
 
-In the project directory, you can run:
+This project sets up `fastify` with `typescript` in the most flexible way which is different from any tutorial or blog elsewhere.
 
-### `npm run dev`
+## Dependencies
+This project uses:
 
-To start the app in dev mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-### `npm start`
-
-For production mode
-
-### `npm run test`
-
-Run the test cases.
-
-## Learn More
-
-To learn Fastify, check out the [Fastify documentation](https://www.fastify.io/docs/latest/).
+1. `prettier` for code formatting.
+2. `@fastify/type-provider-typebox` as the type provider for fastify.
+3. `fast-jwt` for JWT signing and verification.
+4. `argon2` for pasword hashing.
+5. `@fastify/swagger` and `@fastify/swagger-ui` for automatic swagger docs generation.
+6. `config` for configuration management.

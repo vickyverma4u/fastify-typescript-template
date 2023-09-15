@@ -1,4 +1,4 @@
-import { FastifyRequestTypebox, FastifyReplyTypebox, RouteShorthandOptionsWithHandlerTypebox } from '../../types';
+import { RouteShorthandOptionsWithHandlerTypebox } from '../../types';
 import { Type } from '@fastify/type-provider-typebox';
 import { getUserByEmail } from '../../services/fileDb';
 import { verifyPassword } from '../../utils/password';
@@ -21,7 +21,7 @@ const loginSchema = {
 
 export const login: RouteShorthandOptionsWithHandlerTypebox<typeof loginSchema> = {
   schema: loginSchema,
-  handler: async (req: FastifyRequestTypebox<typeof loginSchema>, reply: FastifyReplyTypebox<typeof loginSchema>) => {
+  handler: async (req, reply) => {
     try {
       const user = getUserByEmail(req.body.email);
       if (!user) return reply.code(400).send({ error: 'User not found' });

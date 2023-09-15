@@ -1,4 +1,4 @@
-import { FastifyRequestTypebox, FastifyReplyTypebox, RouteShorthandOptionsWithHandlerTypebox } from '../types';
+import { RouteShorthandOptionsWithHandlerTypebox } from '../types';
 import { Type } from '@fastify/type-provider-typebox';
 
 const getRootSchema = {
@@ -14,10 +14,7 @@ const getRootSchema = {
 
 export const getRoot: RouteShorthandOptionsWithHandlerTypebox<typeof getRootSchema> = {
   schema: getRootSchema,
-  handler: async (
-    req: FastifyRequestTypebox<typeof getRootSchema>,
-    reply: FastifyReplyTypebox<typeof getRootSchema>,
-  ) => {
+  handler: async (req, reply) => {
     reply.code(200).send({ msg: `Hello ${req.query.name ?? 'world'}!` });
   },
 };
